@@ -7,7 +7,6 @@ export type AvatarOptions =
       face: string;
       mouth: string;
       sides: string;
-      texture: string;
       top: string;
     }
   | undefined;
@@ -20,16 +19,7 @@ export interface Avatar {
 }
 
 export interface OverrideOption {
-  name:
-    | 'name'
-    | 'backgroundColor'
-    | 'baseColor'
-    | 'eyes'
-    | 'face'
-    | 'mouth'
-    | 'sides'
-    | 'texture'
-    | 'top';
+  name: 'name' | 'backgroundColor' | 'baseColor' | 'eyes' | 'face' | 'mouth' | 'sides' | 'top';
   value: string;
 }
 

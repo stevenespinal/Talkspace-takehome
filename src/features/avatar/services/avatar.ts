@@ -1,30 +1,31 @@
 import { AvatarOptions, OverrideOption, CustomizationOptions } from '@/features/avatar/types';
+const DICEBEAR_API_URL = import.meta.env.VITE_DICEBEAR_API_URL;
 
-// construct URLs for avatars
 export const buildURL = (
   avatarOptions: AvatarOptions | undefined,
   overrideOption?: OverrideOption
-) => {
-  if (!avatarOptions) return 'https://api.dicebear.com/9.x/bottts/svg';
-  const _O = { ...avatarOptions };
-  if (overrideOption) _O[overrideOption.name] = overrideOption.value;
-  const baseURL = 'https://api.dicebear.com/9.x/bottts/svg?';
+): string => {
+  if (!avatarOptions) return DICEBEAR_API_URL;
+
+  const options = { ...avatarOptions };
+  if (overrideOption) {
+    options[overrideOption.name] = overrideOption.value;
+  }
+
   const queryParams = [
-    `baseColor=${_O.baseColor}`,
-    `backgroundColor=${_O.backgroundColor}`,
-    `eyes=${_O.eyes}`,
-    `face=${_O.face}`,
-    `mouth=${_O.mouth}`,
-    `sides=${_O.sides}`,
-    `texture=${_O.texture}`,
-    `top=${_O.top}`,
+    `baseColor=${options.baseColor}`,
+    `backgroundColor=${options.backgroundColor}`,
+    `eyes=${options.eyes}`,
+    `face=${options.face}`,
+    `mouth=${options.mouth}`,
+    `sides=${options.sides}`,
+    `top=${options.top}`,
   ];
-  const queryString = queryParams.join('&');
-  return baseURL + queryString;
+
+  return `${DICEBEAR_API_URL}?${queryParams.join('&')}`;
 };
 
-// generate unique-ish ID
-export const generateKey = (name: string) => {
+export const generateKey = (name: string): string => {
   return `${name}${Math.floor(Math.random() * 1000000)}`;
 };
 
@@ -36,11 +37,10 @@ export const defaultRobot: AvatarOptions = {
   face: 'square01',
   mouth: 'grill02',
   sides: 'square',
-  texture: 'dots',
   top: 'lights',
 };
 
-// options for customization:
+// options for customization: https://www.dicebear.com/styles/avataaars/#usage
 export const customizationOptions: CustomizationOptions[] = [
   {
     label: 'Eyes',
@@ -93,20 +93,6 @@ export const customizationOptions: CustomizationOptions[] = [
       'squareAssymetric',
     ],
   },
-  // this actually doesn't seem to work from the API
-  // { label: "Texture",
-  //   option:"texture",
-  //   values: [
-  //     "camo01",
-  //     "camo02",
-  //     "circuits",
-  //     "dirty01",
-  //     "dirty02",
-  //     "dots",
-  //     "grunge01",
-  //     "grunge02"
-  //   ]
-  // },
   {
     label: 'Top',
     option: 'top',
@@ -130,10 +116,8 @@ export const COLOR_PALETTE = [
   'C4C4C4',
   '888888',
   '555555',
-  /*"#222222",*/
   '000000',
   '006600',
-  /*"#22B14C",*/
   '02BE01',
   '51E119',
   '94E044',
@@ -158,7 +142,6 @@ export const COLOR_PALETTE = [
   'FF3904',
   '020763',
   '0000EA',
-  /*"#044BFF",*/
   '6583CF',
   '36BAFF',
   '0083C7',
