@@ -2,7 +2,7 @@ button.save_button {
   margin-top: 16px;
   margin-right: 5px;
   display: flex;
-  flex-flow:column nowrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   rotate: 45deg;
@@ -23,7 +23,6 @@ button.save_button {
 .save_button:hover {
   box-shadow: 0 0 8px rgb(0, 51, 38, 0.7);
   background-color: rgb(141, 255, 47);
-
 }
 .save_button:disabled {
   box-shadow: 0 0 8px #aaa;
@@ -33,7 +32,6 @@ button.save_button {
 .save_button:active {
   box-shadow: 0 0 8px rgb(0, 51, 38, 0.7);
   background-color: rgb(85, 190, 0);
-
 }
 
 .save_button:disabled span {
