@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useContext } from 'react';
-import { AvatarContext } from '../../context';
-import { COLOR_PALETTE } from '../../Services';
-import '../../styles/UI/colorPicker.css';
+import { AvatarContext } from '@/features/avatar/context';
+import { COLOR_PALETTE } from '@/features/avatar/Services';
+import '@/shared/styles/ui/colorPicker.css';
 
 interface Props {
   label: string;

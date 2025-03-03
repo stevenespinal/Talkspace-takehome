@@ -1,11 +1,11 @@
-import '../styles/optionsPicker.css';
-import TabBar from './UI/tabBar';
-import { CustomizationOptions, TabData } from '../Types';
-import { customizationOptions } from '../Services';
+import '@/shared/styles/optionsPicker.css';
+import TabBar from '@/shared/components/ui/TabBar';
+import { CustomizationOptions, TabData } from '@/features/avatar/Types';
+import { customizationOptions } from '@/features/avatar/Services';
 import { useState } from 'react';
-import { buildURL } from '../Services';
+import { buildURL } from '@/features/avatar/Services';
 import { useContext } from 'react';
-import { AvatarContext } from '../context';
+import { AvatarContext } from '@/features/avatar/context';
 
 const OptionsPicker = () => {
   const { avatarOptions, setAvatarOptions } = useContext(AvatarContext);
