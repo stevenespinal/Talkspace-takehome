@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { AvatarOptions, AvatarList } from './types';
+import { AvatarOptions, AvatarList } from '@/features/avatar/types';
 
 interface AvatarContextType {
   avatarOptions: AvatarOptions;

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { AvatarContext } from '@/features/avatar/context';
 import { COLOR_PALETTE } from '@/features/avatar/services/avatar';
 import '@/shared/styles/ui/color-picker.css';

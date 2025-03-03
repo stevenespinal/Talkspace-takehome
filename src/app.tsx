@@ -9,8 +9,8 @@ import { AvatarContext, AvatarURLContext, AvatarListContext } from '@/features/a
 import { buildURL, defaultRobot } from '@/features/avatar/services/avatar';
 import RobotListItem from '@/features/avatar/components/robot-list-item';
 import SaveButton from '@/shared/components/ui/save-button';
-import { storageService } from './shared/services/storage';
-import { AvatarOptions } from './features/avatar/types';
+import { storageService } from '@/shared/services/storage';
+import { AvatarOptions } from '@/features/avatar/types';
 
 function App() {
   const [avatarOptions, setAvatarOptions] = useState(defaultRobot);
