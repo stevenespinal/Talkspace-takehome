@@ -1,7 +1,7 @@
-import { useOnUpdateAvatarList } from './../Hooks';
+import { useOnUpdateAvatarList } from '@/features/avatar/hooks';
 import { useContext } from 'react';
-import { AvatarListContext } from './../context';
-import '../styles/robotListItem.css';
+import { AvatarListContext } from '@/features/avatar/context';
+import '@/shared/styles/robot-list-item.css';
 
 interface Props {
   keyName: string;

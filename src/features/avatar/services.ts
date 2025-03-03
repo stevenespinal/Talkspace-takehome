@@ -1,4 +1,4 @@
-import { AvatarOptions, OverrideOption, CustomizationOptions } from './Types';
+import { AvatarOptions, OverrideOption, CustomizationOptions } from '@/features/avatar/types';
 
 // construct URLs for avatars
 export const buildURL = (

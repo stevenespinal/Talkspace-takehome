@@ -1,4 +1,4 @@
-import { AvatarList } from './Types';
+import { AvatarList } from '@/features/avatar/types';
 
 export const useOnUpdateAvatarList = () => {
   try {

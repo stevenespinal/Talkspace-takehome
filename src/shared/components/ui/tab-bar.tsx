@@ -1,5 +1,5 @@
-import { TabData } from '../../Types';
-import '../../styles/UI/tabBar.css';
+import { TabData } from '@/features/avatar/types';
+import '@/shared/styles/ui/tab-bar.css';
 import { useState } from 'react';
 
 interface Props {

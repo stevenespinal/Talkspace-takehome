@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import '../styles/avatarPreview.css';
-import { AvatarURLContext } from '../context';
+import '@/shared/styles/avatar-preview.css';
+import { AvatarURLContext } from '@/features/avatar/context';
 
 const AvatarPreview = () => {
   const avatarURL = useContext(AvatarURLContext);
