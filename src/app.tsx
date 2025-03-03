@@ -77,7 +77,12 @@ function App() {
                   {avatarList &&
                     avatarList.map((avatar) => {
                       return (
-                        <RobotListItem keyName={avatar.key} name={avatar.name} url={avatar.URL} />
+                        <RobotListItem
+                          key={avatar.key}
+                          keyName={avatar.key}
+                          name={avatar.name}
+                          url={avatar.URL}
+                        />
                       );
                     })}
                 </ul>
