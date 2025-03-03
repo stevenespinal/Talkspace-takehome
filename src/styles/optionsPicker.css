@@ -1,5 +1,5 @@
 .options_picker_container {
-  display:flex;
+  display: flex;
   flex: 1;
   flex-flow: column nowrap;
   background-color: #fff;
@@ -8,12 +8,12 @@
   margin-top: 32px;
 }
 
-.option_selection:hover{
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5)
+.option_selection:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
-.option_selection:active{
-  box-shadow: 0px 0px 8px rgba(157, 255, 0, 0.8)
+.option_selection:active {
+  box-shadow: 0px 0px 8px rgba(157, 255, 0, 0.8);
 }
 
 .options_examples {
@@ -28,6 +28,6 @@
   height: 100px;
   width: 100px;
   border-radius: 16px;
-  margin:8px;
-  overflow:hidden;
+  margin: 8px;
+  overflow: hidden;
 }

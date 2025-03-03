@@ -1,6 +1,5 @@
-import { createContext} from "react"
+import { createContext } from 'react';
 
-
-export const AvatarContext = createContext({})
-export const AvatarURLContext= createContext()
-export const AvatarListContext = createContext({})
+export const AvatarContext = createContext({});
+export const AvatarURLContext = createContext();
+export const AvatarListContext = createContext({});

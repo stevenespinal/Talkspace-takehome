@@ -6,21 +6,20 @@
   padding: 8px 8px;
   list-style-type: none;
   border-bottom: 1px solid #aaa;
-  
 }
 
-.item_avatar{
-  display:flex;
-  height:64px;
+.item_avatar {
+  display: flex;
+  height: 64px;
   width: 64px;
   border-radius: 8px;
-  overflow:hidden;
+  overflow: hidden;
   margin-right: 8px;
 }
 
 .avatar_item_name {
   display: flex;
-  flex:1;
+  flex: 1;
   flex-flow: column nowrap;
   align-items: flex-start;
   font-size: 1rem;
@@ -28,13 +27,13 @@
 }
 
 button.avatar_delete {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.5rem;
-  height:24px;
-  width:24px;
+  height: 24px;
+  width: 24px;
   border-radius: 14px;
   border: 0px solid transparent;
-  background-color: #ddd
+  background-color: #ddd;
 }
 
 .avatar_delete:hover {
