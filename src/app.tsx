@@ -6,9 +6,10 @@ import TextInput from '@/shared/components/ui/text-input';
 import { useState } from 'react';
 import { useOnUpdateAvatarList } from '@/features/avatar/hooks';
 import { AvatarContext, AvatarURLContext, AvatarListContext } from '@/features/avatar/context';
-import { generateKey, buildURL, defaultRobot } from '@/features/avatar/services';
+import { generateKey, buildURL, defaultRobot } from '@/features/avatar/services/avatar';
 import RobotListItem from '@/features/avatar/components/robot-list-item';
 import SaveButton from '@/shared/components/ui/save-button';
+import { storageService } from './shared/services/storage';
 
 function App() {
   const [avatarOptions, setAvatarOptions] = useState(defaultRobot);
@@ -21,14 +22,12 @@ function App() {
   };
 
   const saveAvatar = (url: string, name: string) => {
-    console.log(event?.target);
     try {
-      console.log('fire!!!');
-      window.localStorage.setItem(generateKey(name), JSON.stringify({ URL: url, name: name }));
-      setAvatarList(useOnUpdateAvatarList());
+      storageService.saveAvatar(name, url);
+      setAvatarList(storageService.getAllAvatars());
       setAvatarOptions(defaultRobot);
     } catch (error) {
-      console.log(error);
+      console.error('Failed to save avatar:', error);
     }
   };
 
