@@ -24,9 +24,11 @@ If you are using a private repo please allow access to the emails our recruiter 
 
 ## Running the App
 
-pull
-npm install
-npm run dev
+To get started:
+
+1. Run `npm install` in the root directory
+2. Create a `.env` file and add: `VITE_DICEBEAR_API_URL=https://api.dicebear.com/9.x/bottts/svg`
+3. Run `npm run dev` to start the application
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
