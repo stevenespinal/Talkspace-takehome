@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { AvatarContext } from '@/features/avatar/context';
 import { COLOR_PALETTE } from '@/features/avatar/services/avatar';
 import '@/shared/styles/ui/color-picker.css';
+import { AvatarOptions } from '@/features/avatar/types';
 
 interface Props {
   label: string;
@@ -17,9 +18,9 @@ const ColorPicker = (props: Props) => {
   const palette = COLOR_PALETTE;
 
   const handleOnClick = (optionKey: string, color: string) => {
-    const _O = { ...avatarOptions };
-    _O[optionKey] = color;
-    setAvatarOptions(_O);
+    const updatedOptions = { ...avatarOptions };
+    updatedOptions[optionKey as keyof AvatarOptions] = color as never;
+    setAvatarOptions(updatedOptions as AvatarOptions);
   };
 
   return (

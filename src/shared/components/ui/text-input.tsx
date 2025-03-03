@@ -5,17 +5,16 @@ import '@/shared/styles/ui/text-input.css';
 interface Props {
   name: string;
   label: string;
-  avatarName: string;
   placeholder?: string;
   className?: string;
   value: string;
-  handleOnChange: () => void;
+  handleOnChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextInput = (props: Props) => {
   const { name, label, placeholder, className, handleOnChange } = props;
 
-  const { avatarOptions, setAvatarOptions } = useContext(AvatarContext);
+  const { avatarOptions } = useContext(AvatarContext);
 
   return (
     <>
@@ -23,12 +22,12 @@ const TextInput = (props: Props) => {
         {label}
         <input
           name={name}
-          value={avatarOptions.name}
+          value={avatarOptions?.name}
           className={className ? className : ''}
           type="Text"
           placeholder={placeholder ? placeholder : ''}
-          onChange={() => {
-            handleOnChange();
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            handleOnChange(event);
           }}
           maxLength={25}
         />

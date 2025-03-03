@@ -11,9 +11,9 @@ interface Props {
 
 const RobotListItem = (props: Props) => {
   const { keyName, name, url } = props;
-  const { avatarList, setAvatarList } = useContext(AvatarListContext);
+  const { setAvatarList } = useContext(AvatarListContext);
 
-  const deleteAvatar = (keyN: string) => {
+  const deleteAvatar = () => {
     storageService.removeAvatar(keyName);
     setAvatarList(storageService.getAllAvatars());
   };
@@ -25,7 +25,7 @@ const RobotListItem = (props: Props) => {
           <img src={url} alt={`robot avatar`} />
         </span>
         <span className="avatar_item_name">{name}</span>
-        <button className="avatar_delete" onClick={() => deleteAvatar(keyName)}>
+        <button className="avatar_delete" onClick={() => deleteAvatar()}>
           X
         </button>
       </li>
