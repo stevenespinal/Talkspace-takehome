@@ -1,6 +1,6 @@
 import '@/shared/styles/options-picker.css';
 import TabBar from '@/shared/components/ui/tab-bar';
-import { CustomizationOptions, TabData } from '@/features/avatar/types';
+import { AvatarOptions, CustomizationOptions, TabData } from '@/features/avatar/types';
 import { customizationOptions } from '@/features/avatar/services/avatar';
 import { useState } from 'react';
 import { buildURL } from '@/features/avatar/services/avatar';
@@ -18,7 +18,7 @@ const OptionsPicker = () => {
 
   const handleOnClick = (option?: string) => {
     if (option) setActiveTab(option);
-    const optionValues = getDisplayOptions(customizationOptions, option);
+    const optionValues = getDisplayOptions(customizationOptions, option || '');
     setDisplayOptions(optionValues);
   };
 
@@ -32,9 +32,9 @@ const OptionsPicker = () => {
   };
 
   const updateAvatar = (optKey: string, value: string) => {
-    const _O = { ...avatarOptions };
-    _O[optKey] = value;
-    setAvatarOptions(_O);
+    const updatedOptions = { ...avatarOptions };
+    updatedOptions[optKey as keyof AvatarOptions] = value as never;
+    setAvatarOptions(updatedOptions as AvatarOptions);
   };
 
   return (
@@ -50,7 +50,13 @@ const OptionsPicker = () => {
                 updateAvatar(activeTab, opt);
               }}
             >
-              <img src={buildURL(avatarOptions, { name: activeTab, value: opt })} alt="avatar" />
+              <img
+                src={buildURL(avatarOptions, {
+                  name: activeTab as keyof AvatarOptions,
+                  value: opt,
+                })}
+                alt="avatar"
+              />
             </div>
           );
         })}

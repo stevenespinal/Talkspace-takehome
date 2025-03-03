@@ -6,19 +6,20 @@ import TextInput from '@/shared/components/ui/text-input';
 import { useState } from 'react';
 import { useOnUpdateAvatarList } from '@/features/avatar/hooks';
 import { AvatarContext, AvatarURLContext, AvatarListContext } from '@/features/avatar/context';
-import { generateKey, buildURL, defaultRobot } from '@/features/avatar/services/avatar';
+import { buildURL, defaultRobot } from '@/features/avatar/services/avatar';
 import RobotListItem from '@/features/avatar/components/robot-list-item';
 import SaveButton from '@/shared/components/ui/save-button';
 import { storageService } from './shared/services/storage';
+import { AvatarOptions } from './features/avatar/types';
 
 function App() {
   const [avatarOptions, setAvatarOptions] = useState(defaultRobot);
   const [avatarList, setAvatarList] = useState(useOnUpdateAvatarList);
 
-  const updateName = () => {
-    const _O = { ...avatarOptions };
-    _O.name = event?.target.value;
-    setAvatarOptions(_O);
+  const updateName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const updatedOptions = { ...avatarOptions };
+    updatedOptions.name = event.target.value;
+    setAvatarOptions(updatedOptions as AvatarOptions);
   };
 
   const saveAvatar = (url: string, name: string) => {
@@ -41,7 +42,7 @@ function App() {
                 <SaveButton
                   disabled={avatarOptions?.name === '' ? true : false}
                   handleOnClick={() => {
-                    saveAvatar(buildURL(avatarOptions), avatarOptions?.name);
+                    saveAvatar(buildURL(avatarOptions), avatarOptions?.name || '');
                   }}
                 >
                   +
