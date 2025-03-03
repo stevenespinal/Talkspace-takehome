@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import '@/shared/styles/avatarPreview.css';
+import '@/shared/styles/avatar-preview.css';
 import { AvatarURLContext } from '@/features/avatar/context';
 
 const AvatarPreview = () => {

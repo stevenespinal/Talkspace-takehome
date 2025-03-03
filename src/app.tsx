@@ -1,14 +1,14 @@
 import '@/shared/styles/App.css';
-import AvatarPreview from '@/features/avatar/components/AvatarPreview';
-import OptionsPicker from '@/features/avatar/components/OptionsPicker';
-import ColorPicker from '@/shared/components/ui/ColorPicker';
-import TextInput from '@/shared/components/ui/TextInput';
+import AvatarPreview from '@/features/avatar/components/avatar-preview';
+import OptionsPicker from '@/features/avatar/components/options-picker';
+import ColorPicker from '@/shared/components/ui/color-picker';
+import TextInput from '@/shared/components/ui/text-input';
 import { useState } from 'react';
-import { useOnUpdateAvatarList } from '@/features/avatar/Hooks';
+import { useOnUpdateAvatarList } from '@/features/avatar/hooks';
 import { AvatarContext, AvatarURLContext, AvatarListContext } from '@/features/avatar/context';
-import { generateKey, buildURL, defaultRobot } from '@/features/avatar/Services';
-import RobotListItem from '@/features/avatar/components/RobotListItem';
-import SaveButton from '@/shared/components/ui/SaveButton';
+import { generateKey, buildURL, defaultRobot } from '@/features/avatar/services';
+import RobotListItem from '@/features/avatar/components/robot-list-item';
+import SaveButton from '@/shared/components/ui/save-button';
 
 function App() {
   const [avatarOptions, setAvatarOptions] = useState(defaultRobot);

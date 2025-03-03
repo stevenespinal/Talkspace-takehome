@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import '@/shared/styles/ui/SaveButton.css';
+import '@/shared/styles/ui/save-button.css';
 
 interface Props {
   disabled: boolean;

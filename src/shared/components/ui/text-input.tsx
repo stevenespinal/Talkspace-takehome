@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AvatarContext } from '@/features/avatar/context';
-import '@/shared/styles/ui/textinput.css';
+import '@/shared/styles/ui/text-input.css';
 
 interface Props {
   name: string;
